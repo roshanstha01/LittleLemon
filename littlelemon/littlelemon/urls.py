@@ -27,6 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
+    path('api/menu-items/', views.MenuItemsView.as_view()),
+    path('api/menu-items/<int:pk>', views.SingleMenuItemView.as_view()),
     path('restaurant/', include('restaurant.urls')),
     path('restaurant/booking/', include(router.urls)),
 ]
